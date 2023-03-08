@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\Admin\ProfileController;
+use App\Http\Controllers\Admin\ProjectController;
 use App\Http\Controllers\Admin\UserController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
@@ -19,7 +20,7 @@ use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
  */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('front.index');
 });
 
 Route::get('/dashboard', function () {
@@ -40,6 +41,7 @@ Route::group(
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('/categories', CategoryController::class)->names('category');
         Route::resource('/users', UserController::class)->names('users');
+        Route::resource('/project', ProjectController::class)->names('project');
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
         Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
 
