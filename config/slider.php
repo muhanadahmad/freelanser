@@ -11,6 +11,11 @@ return
         'tltle'=>'Users',
         'route'=>'users.index',
     ],
+    [
+        'icon'=>'ti-menu-alt',
+        'tltle'=>'Projects',
+        'route'=>'project.index',
+    ],
 
 
  ];
